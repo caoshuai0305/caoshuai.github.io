@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="caoshuai Blog">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="可维护性（maintainability）  如果bug容易修复、修改、添加功能能够轻松完成，那么可以主观地认为代码是易维护的 可读性（readability）可扩展性（extensibility）灵活性（flexibility）简洁性（simplicity）可复用性（reusability）可测试性（testability）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之美-从哪些维度评判代码质量的好坏">
+<meta property="og:url" content="http://example.com/2021/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E-%E4%BB%8E%E5%93%AA%E4%BA%9B%E7%BB%B4%E5%BA%A6%E8%AF%84%E5%88%A4%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%84%E5%A5%BD%E5%9D%8F/index.html">
 <meta property="og:site_name" content="caoshuai Blog">
+<meta property="og:description" content="可维护性（maintainability）  如果bug容易修复、修改、添加功能能够轻松完成，那么可以主观地认为代码是易维护的 可读性（readability）可扩展性（extensibility）灵活性（flexibility）简洁性（simplicity）可复用性（reusability）可测试性（testability）">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-03-03T03:28:03.000Z">
+<meta property="article:modified_time" content="2021-03-03T03:45:18.259Z">
 <meta property="article:author" content="caoshuai">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2020/">
+<link rel="canonical" href="http://example.com/2021/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E-%E4%BB%8E%E5%93%AA%E4%BA%9B%E7%BB%B4%E5%BA%A6%E8%AF%84%E5%88%A4%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%84%E5%A5%BD%E5%9D%8F/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | caoshuai Blog</title>
+  <title>设计模式之美-从哪些维度评判代码质量的好坏 | caoshuai Blog</title>
   
 
 
@@ -149,50 +153,77 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 3 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E-%E4%BB%8E%E5%93%AA%E4%BA%9B%E7%BB%B4%E5%BA%A6%E8%AF%84%E5%88%A4%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%84%E5%A5%BD%E5%9D%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="caoshuai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoshuai Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          设计模式之美-从哪些维度评判代码质量的好坏
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-03 11:28:03 / Modified: 11:45:18" itemprop="dateCreated datePublished" datetime="2021-03-03T11:28:03+08:00">2021-03-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h3 id="可维护性（maintainability）"><a href="#可维护性（maintainability）" class="headerlink" title="可维护性（maintainability）"></a>可维护性（maintainability）</h3><p>  如果bug容易修复、修改、添加功能能够轻松完成，那么可以主观地认为代码是易维护的</p>
+<h3 id="可读性（readability）"><a href="#可读性（readability）" class="headerlink" title="可读性（readability）"></a>可读性（readability）</h3><h3 id="可扩展性（extensibility）"><a href="#可扩展性（extensibility）" class="headerlink" title="可扩展性（extensibility）"></a>可扩展性（extensibility）</h3><h3 id="灵活性（flexibility）"><a href="#灵活性（flexibility）" class="headerlink" title="灵活性（flexibility）"></a>灵活性（flexibility）</h3><h3 id="简洁性（simplicity）"><a href="#简洁性（simplicity）" class="headerlink" title="简洁性（simplicity）"></a>简洁性（simplicity）</h3><h3 id="可复用性（reusability）"><a href="#可复用性（reusability）" class="headerlink" title="可复用性（reusability）"></a>可复用性（reusability）</h3><h3 id="可测试性（testability）"><a href="#可测试性（testability）" class="headerlink" title="可测试性（testability）"></a>可测试性（testability）</h3>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-07T11:34:26+08:00"
-              content="2020-12-07">
-          12-07
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/07/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/03/My-New-Post/" rel="prev" title="面向接口编程">
+      <i class="fa fa-chevron-left"></i> 面向接口编程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -245,6 +276,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7%EF%BC%88maintainability%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">可维护性（maintainability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%AF%BB%E6%80%A7%EF%BC%88readability%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">可读性（readability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7%EF%BC%88extensibility%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">可扩展性（extensibility）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%B5%E6%B4%BB%E6%80%A7%EF%BC%88flexibility%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">灵活性（flexibility）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E6%B4%81%E6%80%A7%EF%BC%88simplicity%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">简洁性（simplicity）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%A4%8D%E7%94%A8%E6%80%A7%EF%BC%88reusability%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">可复用性（reusability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E6%B5%8B%E8%AF%95%E6%80%A7%EF%BC%88testability%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">可测试性（testability）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
